@@ -1,19 +1,11 @@
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import Express from "express";
-import { buildSchema, Resolver, Query } from "type-graphql";
-
-@Resolver()
-class HelloResolver {
-    @Query(() => String)
-    async helloWorld() {
-        return "Hello World!";
-    }
-}
+import { buildSchema, } from "type-graphql";
 
 const main = async () => {
     const schema = await buildSchema({
-        resolvers: [HelloResolver]
+        resolvers: [__dirname + "/**/*.ts"]
     });
 
     const apolloServer = new ApolloServer({
@@ -30,7 +22,7 @@ const main = async () => {
 
     app.listen(port, () => {
         if (port == 4000) {
-            console.log(`server started on http://localhost:${port}`);
+            console.log(`server started on http://localhost:${port}/graphql`);
         } else {
             console.log(`server started at port ${port}`);
         }
