@@ -16,7 +16,11 @@ const main = async () => {
         resolvers: [HelloResolver]
     });
 
-    const apolloServer = new ApolloServer({ schema });
+    const apolloServer = new ApolloServer({
+        schema,
+        introspection: true,
+        playground: true,
+    });
 
     const app = Express();
 
