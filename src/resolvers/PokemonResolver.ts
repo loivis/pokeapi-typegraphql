@@ -1,47 +1,38 @@
 import { Resolver, Query, Arg, FieldResolver, Root, ResolverInterface } from "type-graphql";
-import fetch from "node-fetch";
+import { Service } from "typedi";
 
 import { Pokemon } from "schemas/Pokemon";
 import { Species } from "schemas/Species";
 import { Ability } from "schemas/Ability";
+import { PokeAPI } from "services/PokeAPI";
 
+@Service()
 @Resolver(Pokemon)
 export class PokemonResolver implements ResolverInterface<Pokemon>{
+    constructor(
+        private readonly pokeAPI: PokeAPI,
+    ) { }
+
     @Query(() => Pokemon, { nullable: true })
     async pokemonByID(@Arg("id") id: number): Promise<Pokemon | null> {
-
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + id)
-
-        if (response.status != 200) {
-            throw new Error("requested pokemon doesn't exist");
-        }
-
-        return response.json();
+        return this.pokeAPI.getPokemon(id);
     }
 
     @Query(() => Pokemon, { nullable: true })
     async pokemonByName(@Arg("name") name: string): Promise<Pokemon | null> {
-
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + name)
-
-        if (response.status != 200) {
-            throw new Error("requested pokemon doesn't exist");
-        }
-
-        return response.json();
+        return this.pokeAPI.getPokemon(name);
     }
 
     @FieldResolver(() => Species)
     async species(@Root() pokemon: Pokemon) {
-        const response = await fetch(pokemon.species.url);
-        return response.json();
+        return this.pokeAPI.getSpecies(pokemon.species.url);
     }
 
     @FieldResolver(() => [Ability])
     abilities(@Root() pokemon: Pokemon) {
         const abs = pokemon.abilities.map(async (e) => {
-            const response = await fetch(e.ability.url);
-            var ab = await response.json() as Ability
+            var ab = await this.pokeAPI.getAbility(e.ability.url)
+
             ab.slot = e.slot
             ab.is_hidden = e.is_hidden
 

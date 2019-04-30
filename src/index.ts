@@ -2,10 +2,17 @@ import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import Express from "express";
 import { buildSchema, } from "type-graphql";
+import { Container } from "typedi";
+import { PokeAPI } from "services/PokeAPI";
+
 
 const main = async () => {
+
+    Container.set({ id: "POKEAPI", factory: () => new PokeAPI() });
+
     const schema = await buildSchema({
-        resolvers: [__dirname + "/**/*.ts"]
+        resolvers: [__dirname + "/**/*.ts"],
+        container: Container,
     });
 
     const apolloServer = new ApolloServer({
