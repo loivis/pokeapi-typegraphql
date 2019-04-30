@@ -1,14 +1,18 @@
 import { ObjectType, Field } from "type-graphql";
-import { Species } from "./Species";
+import { PokemonSpecies } from "./PokemonSpecies";
+import { EvolutionDetail } from "./EvolutionDetail";
 
 @ObjectType()
 export class ChainLink {
     @Field()
     isBaby: boolean;
 
+    @Field(() => [EvolutionDetail])
+    evolutionDetails: EvolutionDetail[];
+
     @Field(() => [ChainLink])
     evolvesTo: ChainLink[];
 
-    @Field(() => Species)
-    species: Species
+    @Field(() => PokemonSpecies)
+    species: PokemonSpecies;
 }

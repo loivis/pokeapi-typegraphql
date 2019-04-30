@@ -2,7 +2,7 @@ import { Resolver, Query, Arg, FieldResolver, Root, ResolverInterface } from "ty
 import { Service } from "typedi";
 
 import { Pokemon } from "schemas/Pokemon";
-import { Species } from "schemas/Species";
+import { PokemonSpecies } from "schemas/PokemonSpecies";
 import { Ability } from "schemas/Ability";
 import { PokeAPI } from "services/PokeAPI";
 
@@ -23,7 +23,7 @@ export class PokemonResolver implements ResolverInterface<Pokemon>{
         return this.pokeAPI.getPokemon(name);
     }
 
-    @FieldResolver(() => Species)
+    @FieldResolver(() => PokemonSpecies)
     async species(@Root() pokemon: Pokemon) {
         return this.pokeAPI.getSpecies(pokemon.species.url);
     }
@@ -31,10 +31,7 @@ export class PokemonResolver implements ResolverInterface<Pokemon>{
     @FieldResolver(() => [Ability])
     abilities(@Root() pokemon: Pokemon) {
         const abs = pokemon.abilities.map(async (e) => {
-            var ab = await this.pokeAPI.getAbility(e.ability.url)
-
-            ab.slot = e.slot
-            ab.isHidden = e.isHidden
+            var ab = await this.pokeAPI.getPokemonAbility(e.ability.url)
 
             return ab
         });

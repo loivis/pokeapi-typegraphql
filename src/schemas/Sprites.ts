@@ -1,28 +1,28 @@
 import { ObjectType, Field } from "type-graphql";
 
 @ObjectType()
-export class Sprite {
-    @Field()
+export class Sprites {
+    @Field({ nullable: true })
     frontDefault: string
 
-    @Field()
+    @Field({ nullable: true })
     frontShiny: string
 
-    @Field()
+    @Field({ nullable: true })
     frontFemale: string
 
-    @Field()
+    @Field({ nullable: true })
     frontShinyFemale: string
 
-    @Field()
+    @Field({ nullable: true })
     backDefault: string
 
-    @Field()
+    @Field({ nullable: true })
     backShiny: string
 
-    @Field()
+    @Field({ nullable: true })
     backFemale: string
 
-    @Field()
+    @Field({ nullable: true })
     backShinyFemale: string
 }

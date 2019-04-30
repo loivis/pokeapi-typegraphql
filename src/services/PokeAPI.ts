@@ -3,8 +3,9 @@ import fetch from "node-fetch";
 import camelcaseKeys from "camelcase-keys";
 
 import { Pokemon } from "schemas/Pokemon";
-import { Species } from "schemas/Species";
-import { Ability } from "schemas/Ability";
+import { PokemonSpecies } from "schemas/PokemonSpecies";
+import { Generation } from "schemas/Generation";
+import { PokemonAbility } from "schemas/PokemonAbility";
 
 @Service()
 export class PokeAPI {
@@ -51,10 +52,14 @@ export class PokeAPI {
 
 
     async getSpecies(url: string) {
-        return await this.fetchURL(url) as Species;
+        return await this.fetchURL(url) as PokemonSpecies;
     }
 
-    async getAbility(url: string) {
-        return await this.fetchURL(url) as Ability;
+    async getPokemonAbility(url: string) {
+        return await this.fetchURL(url) as PokemonAbility;
+    }
+
+    async getGeneration(url: string) {
+        return await this.fetchURL(url) as Generation;
     }
 }

@@ -1,13 +1,18 @@
 import { ObjectType, ID, Field } from "type-graphql";
 import { ChainLink } from "./ChainLink";
+import { Item } from "./Item";
 
 @ObjectType()
 export class EvolutionChain {
     @Field(() => ID)
     id: number;
 
-    @Field()
+    @Field(() => Item, { nullable: true })
+    babyTriggerItem: Item;
+
+    @Field(() => ChainLink)
     chain: ChainLink;
 
-    url: string
+    static apiType: string = "evolution-chain";
+    url: string;
 }

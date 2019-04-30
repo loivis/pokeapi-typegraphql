@@ -1,14 +1,15 @@
 import { ObjectType, ID, Field } from "type-graphql";
-import { Species } from "./Species";
-import { Ability } from "./Ability";
-import { Form } from "./Form";
-import { VersionGameIndex } from "./VersionGameIndex";
-import { HeldItem } from "./HeldItem";
-import { Move } from "./Move";
-import { Sprite } from "./Sprite";
-import { Stat } from "./Stat";
-import { Type } from "./Type";
 import { LocationAreaEncounter } from "./LocationAreaEncounter";
+
+import { PokemonAbility } from "./PokemonAbility";
+import { PokemonForm } from "./PokemonForm";
+import { PokemonHeldItem } from "./PokemonHeldItem";
+import { PokemonMove } from "./PokemonMove";
+import { PokemonSpecies } from "./PokemonSpecies";
+import { PokemonStat } from "./PokemonStat";
+import { PokemonType } from "./PokemonType";
+import { Sprites } from "./Sprites";
+import { VersionGameIndex } from "./VersionGameIndex";
 
 @ObjectType()
 export class Pokemon {
@@ -33,33 +34,35 @@ export class Pokemon {
     @Field()
     weight: number;
 
-    @Field(() => [LocationAreaEncounter])
-    locationAreaEncounters: LocationAreaEncounter[];
+    @Field(() => [PokemonAbility])
+    abilities: PokemonAbility[];
 
-    @Field(() => [Ability])
-    abilities: Ability[];
-
-    @Field(() => [Form])
-    forms: Form[];
+    @Field(() => [PokemonForm])
+    forms: PokemonForm[];
 
     @Field(() => [VersionGameIndex])
     gameIndices: VersionGameIndex[];
 
-    @Field(() => [HeldItem])
-    heldItems: HeldItem[];
+    @Field(() => [PokemonHeldItem])
+    heldItems: PokemonHeldItem[];
 
-    @Field(() => [Move])
-    moves: Move[];
+    @Field(() => [LocationAreaEncounter])
+    locationAreaEncounters: LocationAreaEncounter[];
 
-    @Field(() => Species)
-    species: Species;
+    @Field(() => [PokemonMove])
+    moves: PokemonMove[];
 
-    @Field(() => [Sprite])
-    sprites: Sprite[];
+    @Field(() => PokemonSpecies)
+    species: PokemonSpecies;
 
-    @Field(() => [Stat])
-    stats: Stat[];
+    @Field(() => Sprites)
+    sprites: Sprites;
 
-    @Field(() => [Type])
-    types: Type[];
+    @Field(() => [PokemonStat])
+    stats: PokemonStat[];
+
+    @Field(() => [PokemonType])
+    types: PokemonType[];
+
+    url: string;
 }

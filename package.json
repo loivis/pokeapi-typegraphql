@@ -6,7 +6,7 @@
   "author": "loivis <github@kinase.wang>",
   "license": "MIT",
   "scripts": {
-    "local": "ts-node-dev -r tsconfig-paths/register --respawn src/index.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn src/index.ts",
     "heroku": "ts-node -r tsconfig-paths/register src/index.ts"
   },
   "dependencies": {

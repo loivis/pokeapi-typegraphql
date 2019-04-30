@@ -1,20 +1,20 @@
 import { Resolver, Query, FieldResolver, Root } from "type-graphql";
 import fetch from "node-fetch";
 
-import { Species } from "schemas/Species";
+import { PokemonSpecies } from "schemas/PokemonSpecies";
 import { EvolutionChain } from "schemas/EvolutionChain";
 
-@Resolver(Species)
+@Resolver(PokemonSpecies)
 export class SpeciesResolver {
-    @Query(() => Species, { nullable: true })
-    species(): Species | null {
-        // TODO: don't return null
+    @Query(() => PokemonSpecies, { nullable: true })
+    species(): PokemonSpecies | null {
+        // TODO: not implemented
         return null
     }
 
     @FieldResolver(() => EvolutionChain)
-    async evolution_chain(@Root() species: Species) {
-        const response = await fetch(species.evolution_chain.url);
+    async evolutionChain(@Root() species: PokemonSpecies) {
+        const response = await fetch(species.evolutionChain.url);
         return response.json();
     }
 }
