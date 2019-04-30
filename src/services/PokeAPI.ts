@@ -14,10 +14,18 @@ export class PokeAPI {
 
     private apiCalls: number = 0;
 
-    async fetchURL(url: string) {
-        this.apiCalls++;
-        console.log(this.apiCalls);
+    private cache = new Map<string, any>();
 
+    async fetchURL(url: string) {
+        if (this.cache.has(url)) {
+            console.log(`return cache for "${url}"`)
+            return this.cache.get(url);
+        }
+
+        this.apiCalls++;
+        console.log(`apiCalls to pokeapi.co: ${this.apiCalls}`);
+
+        console.log(`no cache found for "${url}"`)
         const response = await fetch(url)
 
         if (response.status != 200) {
@@ -25,6 +33,9 @@ export class PokeAPI {
         }
 
         const object = await response.json();
+
+        console.log(`set cache for "${url}"`)
+        this.cache.set(url, object);
 
         return object;
     }
@@ -43,12 +54,6 @@ export class PokeAPI {
     }
 
     async getAbility(url: string) {
-        const response = await fetch(url)
-
-        if (response.status != 200) {
-            throw new Error("requested pokemon doesn't exist");
-        }
-
-        return await response.json() as Ability;
+        return await this.fetchURL(url) as Ability;
     }
 }
