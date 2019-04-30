@@ -3,26 +3,26 @@ import { ObjectType, Field } from "type-graphql";
 @ObjectType()
 export class Sprite {
     @Field()
-    front_default: string
+    frontDefault: string
 
     @Field()
-    front_shiny: string
+    frontShiny: string
 
     @Field()
-    front_female: string
+    frontFemale: string
 
     @Field()
-    front_shiny_female: string
+    frontShinyFemale: string
 
     @Field()
-    back_default: string
+    backDefault: string
 
     @Field()
-    back_shiny: string
+    backShiny: string
 
     @Field()
-    back_female: string
+    backFemale: string
 
     @Field()
-    back_shiny_female: string
+    backShinyFemale: string
 }

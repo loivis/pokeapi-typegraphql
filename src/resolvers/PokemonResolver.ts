@@ -34,7 +34,7 @@ export class PokemonResolver implements ResolverInterface<Pokemon>{
             var ab = await this.pokeAPI.getAbility(e.ability.url)
 
             ab.slot = e.slot
-            ab.is_hidden = e.is_hidden
+            ab.isHidden = e.isHidden
 
             return ab
         });

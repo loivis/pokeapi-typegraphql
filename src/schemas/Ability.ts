@@ -11,7 +11,7 @@ export class Ability {
     name: string
 
     @Field()
-    is_hidden: boolean;
+    isHidden: boolean;
 
     @Field(() => ID)
     slot: number;
@@ -19,7 +19,7 @@ export class Ability {
     url: string
 
     @Field()
-    is_main_series: boolean;
+    isMainSeries: boolean;
 
     @Field(() => Generation)
     generation: Generation;

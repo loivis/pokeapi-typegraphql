@@ -10,13 +10,13 @@ export class Species {
     name: string
 
     @Field()
-    is_baby: boolean;
+    isBaby: boolean;
 
     @Field()
-    has_gender_differences: boolean;
+    hasGenderDifferences: boolean;
 
     @Field()
-    forms_switchable: boolean;
+    formsSwitchable: boolean;
 
     @Field()
     evolution_chain: EvolutionChain;

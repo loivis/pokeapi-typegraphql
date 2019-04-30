@@ -6,5 +6,5 @@ export class Stat {
     effort: number;
 
     @Field()
-    base_stat: string
+    baseStat: string
 }

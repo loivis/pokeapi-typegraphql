@@ -19,13 +19,13 @@ export class Pokemon {
     name: string;
 
     @Field()
-    base_experience: number;
+    baseExperience: number;
 
     @Field()
     height: number;
 
     @Field()
-    is_default: boolean;
+    isDefault: boolean;
 
     @Field()
     order: number;
@@ -34,7 +34,7 @@ export class Pokemon {
     weight: number;
 
     @Field(() => [LocationAreaEncounter])
-    location_area_encounters: LocationAreaEncounter[];
+    locationAreaEncounters: LocationAreaEncounter[];
 
     @Field(() => [Ability])
     abilities: Ability[];
@@ -43,10 +43,10 @@ export class Pokemon {
     forms: Form[];
 
     @Field(() => [VersionGameIndex])
-    game_indices: VersionGameIndex[];
+    gameIndices: VersionGameIndex[];
 
     @Field(() => [HeldItem])
-    held_items: HeldItem[];
+    heldItems: HeldItem[];
 
     @Field(() => [Move])
     moves: Move[];
@@ -62,6 +62,4 @@ export class Pokemon {
 
     @Field(() => [Type])
     types: Type[];
-
-
 }

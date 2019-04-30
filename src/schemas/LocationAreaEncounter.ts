@@ -5,9 +5,9 @@ import { LocationArea } from "./LocationArea";
 @ObjectType()
 export class LocationAreaEncounter {
     @Field()
-    location_area: LocationArea;
+    locationArea: LocationArea;
 
 
     @Field(() => [VersionEncounterDetail])
-    version_details: VersionEncounterDetail[];
+    versionDetails: VersionEncounterDetail[];
 }

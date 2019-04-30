@@ -1,5 +1,6 @@
 import { Service, Inject } from "typedi";
 import fetch from "node-fetch";
+import camelcaseKeys from "camelcase-keys";
 
 import { Pokemon } from "schemas/Pokemon";
 import { Species } from "schemas/Species";
@@ -32,7 +33,7 @@ export class PokeAPI {
             throw new Error("requested pokemon doesn't exist");
         }
 
-        const object = await response.json();
+        const object: any = camelcaseKeys(await response.json(), { deep: true });
 
         console.log(`set cache for "${url}"`)
         this.cache.set(url, object);
