@@ -2,8 +2,8 @@ import { Resolver, Query, Arg, FieldResolver, Root, ResolverInterface } from "ty
 import { Service } from "typedi";
 
 import { PokeAPI } from "services/PokeAPI";
-import { PokemonForm } from "schemas/PokemonForm";
 import { Pokemon } from "schemas/Pokemon";
+import { PokemonForm } from "schemas/PokemonForm";
 
 @Service()
 @Resolver(PokemonForm)

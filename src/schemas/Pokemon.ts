@@ -1,6 +1,6 @@
 import { ObjectType, ID, Field } from "type-graphql";
-import { LocationAreaEncounter } from "./LocationAreaEncounter";
 
+import { LocationAreaEncounter } from "./LocationAreaEncounter";
 import { PokemonAbility } from "./PokemonAbility";
 import { PokemonForm } from "./PokemonForm";
 import { PokemonHeldItem } from "./PokemonHeldItem";

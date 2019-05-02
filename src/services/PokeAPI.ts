@@ -46,6 +46,7 @@ export class PokeAPI {
         }
 
         const object: any = camelcaseKeys(await response.json(), { deep: true });
+        object.url = url
 
         console.log(`set cache for "${url}"`)
         this.cache.set(url, object);

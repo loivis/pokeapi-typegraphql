@@ -8,5 +8,4 @@ export class HeldItemVersionDetails {
 
     @Field(() => Version)
     version: Version;
-
 }
