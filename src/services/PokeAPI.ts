@@ -3,9 +3,6 @@ import fetch from "node-fetch";
 import camelcaseKeys from "camelcase-keys";
 
 import { Pokemon } from "schemas/Pokemon";
-import { PokemonSpecies } from "schemas/PokemonSpecies";
-import { Generation } from "schemas/Generation";
-import { PokemonAbility } from "schemas/PokemonAbility";
 
 @Service()
 export class PokeAPI {
@@ -17,6 +14,14 @@ export class PokeAPI {
     private apiCalls: number = 0;
 
     private cache = new Map<string, any>();
+
+    async get(key: string | number, type: string) {
+        return await this.fetchURL(this.getURL(key, type))
+    }
+
+    async getAllPokemons() {
+        return this.pokemons;
+    }
 
     async fetchURL(url: string) {
         if (this.cache.has(url)) {
@@ -42,24 +47,12 @@ export class PokeAPI {
         return object;
     }
 
-    async getAll() {
-        return this.pokemons;
-    }
+    getURL(key: string | number, type: string): string {
+        key = "" + key
+        if (key.startsWith("http")) {
+            return key;
+        }
 
-    async getPokemon(key: string | number) {
-        return await this.fetchURL(this.v2 + "/pokemon/" + key) as Pokemon;
-    }
-
-
-    async getSpecies(url: string) {
-        return await this.fetchURL(url) as PokemonSpecies;
-    }
-
-    async getPokemonAbility(url: string) {
-        return await this.fetchURL(url) as PokemonAbility;
-    }
-
-    async getGeneration(url: string) {
-        return await this.fetchURL(url) as Generation;
+        return `${this.v2}/${type}/${key}`;
     }
 }

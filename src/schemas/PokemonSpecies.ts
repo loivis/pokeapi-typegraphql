@@ -88,5 +88,6 @@ export class PokemonSpecies {
     @Field(() => [PokemonSpeciesVariety])
     varieties: PokemonSpeciesVariety[];
 
+    static apiType: string = "pokemon-species";
     url: string;
 }

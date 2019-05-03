@@ -36,11 +36,6 @@ export class Ability {
     @Field(() => [AbilityPokemon])
     pokemon: AbilityPokemon[];
 
-<<<<<<< HEAD
-    // non-graphql fields
-    ability: NamedAPIResource;
-=======
     static apiType: string = "ability";
->>>>>>> c4bbab8... wipschema
     url: string;
 }

@@ -34,5 +34,6 @@ export class PokemonForm {
     @Field(() => VersionGroup)
     versionGroup: VersionGroup;
 
+    static apiType: string = "pokemon-form";
     url: string;
 }

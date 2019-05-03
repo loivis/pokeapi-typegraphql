@@ -36,5 +36,6 @@ export class Generation {
     @Field(() => [VersionGroup])
     versionGroups: VersionGroup[];
 
+    static apiType: string = "generation";
     url: string;
 }

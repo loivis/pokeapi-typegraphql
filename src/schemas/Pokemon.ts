@@ -64,5 +64,6 @@ export class Pokemon {
     @Field(() => [PokemonType])
     types: PokemonType[];
 
+    static apiType: string = "pokemon";
     url: string;
 }
