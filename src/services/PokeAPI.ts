@@ -15,7 +15,7 @@ export class PokeAPI {
 
     private cache = new Map<string, any>();
 
-    async get(key: string | number, type: string) {
+    async get(key: string | number, type?: string) {
         return await this.fetchURL(this.getURL(key, type))
     }
 
@@ -47,10 +47,9 @@ export class PokeAPI {
         return object;
     }
 
-    getURL(key: string | number, type: string): string {
-        key = "" + key
-        if (key.startsWith("http")) {
-            return key;
+    getURL(key: string | number, type?: string): string {
+        if (type == undefined) {
+            return "" + key;
         }
 
         return `${this.v2}/${type}/${key}`;

@@ -19,6 +19,6 @@ export class PokemonFormResolver implements ResolverInterface<PokemonForm>{
 
     @FieldResolver(() => Pokemon)
     async pokemon(@Root() pokemonForm: PokemonForm) {
-        return await this.pokeAPI.get(pokemonForm.pokemon.url, Pokemon.apiType) as Pokemon;
+        return await this.pokeAPI.get(pokemonForm.pokemon.url) as Pokemon;
     }
 }

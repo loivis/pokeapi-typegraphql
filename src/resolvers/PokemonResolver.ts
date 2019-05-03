@@ -29,13 +29,13 @@ export class PokemonResolver implements ResolverInterface<Pokemon>{
 
     @FieldResolver(() => PokemonSpecies)
     async species(@Root() pokemon: Pokemon) {
-        return await this.pokeAPI.get(pokemon.species.url, PokemonSpecies.apiType) as PokemonSpecies;
+        return await this.pokeAPI.get(pokemon.species.url) as PokemonSpecies;
     }
 
     @FieldResolver(() => [Ability])
     abilities(@Root() pokemon: Pokemon) {
         const abs = pokemon.abilities.map(async (ab) => {
-            ab.ability = await this.pokeAPI.get(ab.ability.url, Ability.apiType) as Ability;
+            ab.ability = await this.pokeAPI.get(ab.ability.url) as Ability;
             return ab
         })
 
@@ -45,7 +45,7 @@ export class PokemonResolver implements ResolverInterface<Pokemon>{
     @FieldResolver(() => [PokemonForm])
     forms(@Root() pokemon: Pokemon) {
         const abs = pokemon.forms.map(async (form) => {
-            return await this.pokeAPI.get(form.url, PokemonForm.apiType) as PokemonForm;
+            return await this.pokeAPI.get(form.url) as PokemonForm;
         })
 
         return Promise.all(abs);
@@ -54,9 +54,9 @@ export class PokemonResolver implements ResolverInterface<Pokemon>{
     @FieldResolver(() => [PokemonHeldItem])
     heldItems(@Root() pokemon: Pokemon) {
         const his = pokemon.heldItems.map(async (phi) => {
-            phi.item = await this.pokeAPI.get(phi.item.url, PokemonForm.apiType) as Item;
+            phi.item = await this.pokeAPI.get(phi.item.url) as Item;
             phi.versionDetails = await Promise.all(phi.versionDetails.map(async (vd) => {
-                vd.version = await this.pokeAPI.get(vd.version.url, PokemonForm.apiType) as Version;
+                vd.version = await this.pokeAPI.get(vd.version.url) as Version;
                 return vd;
             }));
             return phi;

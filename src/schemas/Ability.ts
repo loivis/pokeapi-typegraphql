@@ -1,6 +1,5 @@
 import { ObjectType, ID, Field } from "type-graphql";
 import { Generation } from "./Generation";
-import { NamedAPIResource } from "types/NamedAPIResource";
 import { Name } from "./Name";
 import { Effect } from "./Effect";
 import { AbilityEffectChange } from "./AbilityEffectChange";
