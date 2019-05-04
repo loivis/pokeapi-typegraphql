@@ -1,6 +1,7 @@
 import { Service, Inject } from "typedi";
-import fetch from "node-fetch";
+import AsyncLock from "async-lock";
 import camelcaseKeys from "camelcase-keys";
+import fetch from "node-fetch";
 
 import { Pokemon } from "schemas/Pokemon";
 
@@ -15,8 +16,13 @@ export class PokeAPI {
 
     private cache = new Map<string, any>();
 
+    private lock = new AsyncLock();
+
     async get(key: string | number, type?: string) {
-        return await this.fetchURL(this.getURL(key, type))
+        const url = this.getURL(key, type);
+        return this.lock.acquire(url, async () => {
+            return await this.fetchURL(url)
+        })
     }
 
     async getAllPokemons() {

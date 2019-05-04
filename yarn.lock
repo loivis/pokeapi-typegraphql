@@ -74,6 +74,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/async-lock@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@types/async-lock/-/async-lock-1.1.1.tgz#81f218213bebcc5f740efe9648272c774a2e4b4b"
+  integrity sha512-TU1X8jmAU2BjwKryBFV/GDezz7Ge0xu9ZuYC7dy6wKj4hnL0JcxeseCOr/G2JkGylff6hdUBrR+Ee5ApAQeU5g==
+
 "@types/body-parser@*", "@types/body-parser@1.17.0":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
@@ -398,6 +403,11 @@ async-limiter@~1.0.0:
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
   integrity sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg==
 
+async-lock@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/async-lock/-/async-lock-1.2.0.tgz#cd6a53cb1ec3f86af25eafdeb6bc7c6e317258b8"
+  integrity sha512-81HzTQm4+qMj6PwNlnR+y9g7pDdGGzd/YBUrQnHk+BhR28ja2qv497NkQQc1KcKEqh/RShm07di2b0cIWVFrNQ==
+
 async-retry@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/async-retry/-/async-retry-1.2.3.tgz#a6521f338358d322b1a0012b79030c6f411d1ce0"
@@ -511,13 +521,6 @@ cardinal@^2.1.1:
   dependencies:
     ansicolors "~0.3.2"
     redeyed "~2.1.0"
-
-cerialize@^0.1.18:
-  version "0.1.18"
-  resolved "https://registry.yarnpkg.com/cerialize/-/cerialize-0.1.18.tgz#d0f4f1b61cec7e4ed16a3eda0cac2bc99787414d"
-  integrity sha512-C/hp4UoPrMK060251Pt/21axF9aL4ceJlg3+pThB68VghhRjOzBzy4f8R9AirXdNB4gpqgaV2deU3UaexInL5w==
-  dependencies:
-    typescript "^2.5.0"
 
 chalk@^2.4.1:
   version "2.4.2"
@@ -1873,11 +1876,6 @@ typedi@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
   integrity sha512-/c7Bxnm6eh5kXx2I+mTuO+2OvoWni5+rXA3PhXwVWCtJRYmz3hMok5s1AKLzoDvNAZqj/Q/acGstN0ri5aQoOA==
-
-typescript@^2.5.0:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
-  integrity sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w==
 
 typescript@^3.4.5:
   version "3.4.5"
