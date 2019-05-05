@@ -14,7 +14,7 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [x] BerryFlavor
 
-- [ ] Characteristic
+- [x] Characteristic
 
 - [ ] ContestEffect
 
