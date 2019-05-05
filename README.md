@@ -22,11 +22,11 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [ ] EggGroup
 
-- [ ] EncounterCondition
+- [x] EncounterCondition
 
-- [ ] EncounterConditionValue
+- [x] EncounterConditionValue
 
-- [ ] EncounterMethod
+- [x] EncounterMethod
 
 - [ ] EvolutionChain
 
