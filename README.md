@@ -16,9 +16,9 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [x] Characteristic
 
-- [ ] ContestEffect
+- [x] ContestEffect
 
-- [ ] ContestType
+- [x] ContestType
 
 - [ ] EggGroup
 
