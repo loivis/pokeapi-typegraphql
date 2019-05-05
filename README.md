@@ -8,11 +8,11 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [x] Ability
 
-- [ ] Berry
+- [x] Berry
 
-- [ ] BerryFirmness
+- [x] BerryFirmness
 
-- [ ] BerryFlavor
+- [x] BerryFlavor
 
 - [ ] Characteristic
 
