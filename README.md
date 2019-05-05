@@ -46,7 +46,7 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [ ] ItemPocket
 
-- [ ] Language
+- [x] Language
 
 - [ ] Location
 
