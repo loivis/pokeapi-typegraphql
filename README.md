@@ -72,9 +72,9 @@ Be nice and friendly to your fellow PokéAPI developers.
 
 - [x] Language
 
-- [ ] Location
+- [x] Location
 
-- [ ] LocationArea
+- [x] LocationArea
 
 - [ ] Machine
 
