@@ -36,15 +36,15 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [x] Generation
 
-- [ ] GrowthRate
+- [x] GrowthRate
 
-- [ ] Item
+- [x] Item
 
-- [ ] ItemAttribute
+- [x] ItemAttribute
 
-- [ ] ItemCategory
+- [x] ItemCategory
 
-- [ ] ItemPocket
+- [x] ItemPocket
 
 - [x] Language
 
