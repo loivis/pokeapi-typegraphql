@@ -32,9 +32,9 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [x] EvolutionTrigger
 
-- [ ] Gender
+- [x] Gender
 
-- [ ] Generation
+- [x] Generation
 
 - [ ] GrowthRate
 
@@ -84,7 +84,7 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [ ] PokemonSpecies
 
-- [ ] Region
+- [x] Region
 
 - [ ] Stat
 
