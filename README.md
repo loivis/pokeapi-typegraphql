@@ -28,9 +28,9 @@ Try it out >>> >> > [pokeapi-typegraphql on heroku](https://pokeapi-typegraphql.
 
 - [x] EncounterMethod
 
-- [ ] EvolutionChain
+- [x] EvolutionChain
 
-- [ ] EvolutionTrigger
+- [x] EvolutionTrigger
 
 - [ ] Gender
 

@@ -1,21 +1,17 @@
-import { Resolver, Query, Arg, FieldResolver, Root, ResolverInterface } from "type-graphql";
-import fetch from "node-fetch";
+import { Resolver, FieldResolver, Root, ResolverInterface } from "type-graphql";
 import { PokemonSpecies } from "schemas/PokemonSpecies";
 import { ChainLink } from "schemas/ChainLink";
+import { PokeAPI } from "services/PokeAPI";
 
 
 @Resolver(ChainLink)
 export class ChainLinkResolver implements ResolverInterface<ChainLink>{
-    @Query(() => ChainLink, { nullable: true })
-    async chainLinkByID(@Arg("id") id: number): Promise<ChainLink | null> {
-        // TODO: not implemented
-        console.log(id);
-        return null
-    }
+    constructor(
+        private readonly pokeAPI: PokeAPI,
+    ) { }
 
     @FieldResolver(() => PokemonSpecies)
-    async species(@Root() ChainLink: ChainLink) {
-        const response = await fetch(ChainLink.species.url);
-        return response.json();
+    async species(@Root() chainLink: ChainLink) {
+        return await this.pokeAPI.get(chainLink.species.url) as PokemonSpecies;
     }
 }

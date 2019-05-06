@@ -2,16 +2,16 @@ import { Resolver, FieldResolver, Root } from "type-graphql";
 
 import { PokeAPI } from "services/PokeAPI";
 import { Language } from "schemas/Language";
-import { Name } from "schemas/Name";
+import { VerboseEffect } from "schemas/VerboseEffect";
 
-@Resolver(Name)
-export class NameResolver {
+@Resolver(VerboseEffect)
+export class VerboseEffectResolver {
     constructor(
         private readonly pokeAPI: PokeAPI,
     ) { }
 
     @FieldResolver(() => Language)
-    async language(@Root() name: Name) {
-        return await this.pokeAPI.get(name.language.url) as Language;
+    async language(@Root() verboseEffect: VerboseEffect) {
+        return await this.pokeAPI.get(verboseEffect.language.url) as Language;
     }
 }

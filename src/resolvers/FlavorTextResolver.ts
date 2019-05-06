@@ -8,9 +8,7 @@ import { Language } from "schemas/Language";
 export class FlavorTextResolver {
     constructor(
         private readonly pokeAPI: PokeAPI,
-    ) {
-        console.log(this.pokeAPI);
-    }
+    ) { }
 
     @FieldResolver(() => Language)
     async language(@Root() flavorText: FlavorText) {
