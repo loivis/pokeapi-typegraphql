@@ -76,23 +76,23 @@ Be nice and friendly to your fellow PokéAPI developers.
 
 - [x] LocationArea
 
-- [ ] Machine
+- [x] Machine
 
-- [ ] Move
+- [x] Move
 
-- [ ] MoveAilment
+- [x] MoveAilment
 
-- [ ] MoveBattleStyle
+- [x] MoveBattleStyle
 
-- [ ] MoveCategory
+- [x] MoveCategory
 
-- [ ] MoveDamageClass
+- [x] MoveDamageClass
 
-- [ ] MoveLearnMethod
+- [x] MoveLearnMethod
 
-- [ ] MoveTarget
+- [x] MoveTarget
 
-- [ ] Nature
+- [x] Nature
 
 - [ ] PokeathlonStat
 
