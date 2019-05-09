@@ -28,7 +28,43 @@ Be nice and friendly to your fellow PokéAPI developers.
 
 - [ ] load all data in database(SQL/NoSQL?) to elimicate requests to [pokeapi.co](https://pokeapi.co)
 
-# List of schemas to resolve
+# Tryout locally
+
+```
+yarn install && yarn dev
+```
+By default, server will listen on port 4000: http://localhost:4000/graphql
+
+# Query example
+
+```graphql
+{
+  pokemonByID(id: 1) {
+    name
+    weight
+    abilities {
+      ability {
+        name
+        isMainSeries
+        generation {
+          name
+          mainRegion {
+            name
+          }
+        }
+      }
+    }
+    sprites {
+      frontDefault
+      frontShiny
+      frontFemale
+      frontShinyFemale
+    }
+  }
+}
+```
+
+# List of schemas
 
 - [x] Ability
 
