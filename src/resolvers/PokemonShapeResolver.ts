@@ -1,11 +1,9 @@
 import { Resolver, Query, Arg, FieldResolver, Root, ResolverInterface } from "type-graphql";
-import { Service } from "typedi";
 
 import { PokeAPI } from "services/PokeAPI";
 import { PokemonShape } from "schemas/PokemonShape";
 import { PokemonSpecies } from "schemas/PokemonSpecies";
 
-@Service()
 @Resolver(PokemonShape)
 export class PokemonShapeResolver implements ResolverInterface<PokemonShape>{
     constructor(

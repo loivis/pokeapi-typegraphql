@@ -1,5 +1,4 @@
 import { Resolver, Query, Arg, FieldResolver, Root, ResolverInterface } from "type-graphql";
-import { Service } from "typedi";
 
 import { Ability } from "schemas/Ability";
 import { EncounterConditionValue } from "schemas/EncounterConditionValue";
@@ -24,7 +23,6 @@ import { Version } from "schemas/Version";
 import { VersionGameIndex } from "schemas/VersionGameIndex";
 import { VersionGroup } from "schemas/VersionGroup";
 
-@Service()
 @Resolver(Pokemon)
 export class PokemonResolver implements ResolverInterface<Pokemon>{
     constructor(

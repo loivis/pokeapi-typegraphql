@@ -1,11 +1,9 @@
 import { Resolver, FieldResolver, Root, Query, Arg } from "type-graphql";
-import { Service } from "typedi";
 
 import { PokeAPI } from "services/PokeAPI";
 import { PokemonHabitat } from "schemas/PokemonHabitat";
 import { PokemonSpecies } from "schemas/PokemonSpecies";
 
-@Service()
 @Resolver(PokemonHabitat)
 export class PokemonHabitatResolver {
     constructor(
