@@ -114,12 +114,12 @@ Be nice and friendly to your fellow PokéAPI developers.
 
 - [x] Region
 
-- [ ] Stat
+- [x] Stat
 
-- [ ] SuperContestEffect
+- [x] SuperContestEffect
 
-- [ ] Type
+- [x] Type
 
-- [ ] Version
+- [x] Version
 
-- [ ] VersionGroup
+- [x] VersionGroup
