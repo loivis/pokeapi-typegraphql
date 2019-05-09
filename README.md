@@ -44,7 +44,7 @@ Be nice and friendly to your fellow PokéAPI developers.
 
 - [x] ContestType
 
-- [ ] EggGroup
+- [x] EggGroup
 
 - [x] EncounterCondition
 
