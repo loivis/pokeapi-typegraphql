@@ -20,7 +20,7 @@ export class GenderResolver {
         return await this.pokeAPI.get(name, Gender.apiType) as Gender;
     }
 
-    @FieldResolver(() => PokemonSpecies)
+    @FieldResolver(() => [PokemonSpecies])
     async requiredForEvolution(@Root() gender: Gender) {
         const rfe = gender.requiredForEvolution.map(async (ps) => {
             return await this.pokeAPI.get(ps.url) as PokemonSpecies;

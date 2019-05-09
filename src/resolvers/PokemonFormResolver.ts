@@ -4,6 +4,7 @@ import { Service } from "typedi";
 import { PokeAPI } from "services/PokeAPI";
 import { Pokemon } from "schemas/Pokemon";
 import { PokemonForm } from "schemas/PokemonForm";
+import { VersionGroup } from "schemas/VersionGroup";
 
 @Service()
 @Resolver(PokemonForm)
@@ -17,8 +18,18 @@ export class PokemonFormResolver implements ResolverInterface<PokemonForm>{
         return await this.pokeAPI.get(id, PokemonForm.apiType) as PokemonForm;
     }
 
+    @Query(() => PokemonForm, { nullable: true })
+    async pokemonFormByName(@Arg("name") name: string): Promise<PokemonForm | null> {
+        return await this.pokeAPI.get(name, PokemonForm.apiType) as PokemonForm;
+    }
+
     @FieldResolver(() => Pokemon)
-    async pokemon(@Root() pokemonForm: PokemonForm) {
-        return await this.pokeAPI.get(pokemonForm.pokemon.url) as Pokemon;
+    async pokemon(@Root() pf: PokemonForm) {
+        return await this.pokeAPI.get(pf.pokemon.url) as Pokemon;
+    }
+
+    @FieldResolver(() => VersionGroup)
+    async versionGroup(@Root() pf: PokemonForm) {
+        return await this.pokeAPI.get(pf.versionGroup.url) as VersionGroup;
     }
 }

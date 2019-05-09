@@ -20,7 +20,7 @@ export class EvolutionTriggerResolver {
         return await this.pokeAPI.get(name, EvolutionTrigger.apiType) as EvolutionTrigger;
     }
 
-    @FieldResolver(() => PokemonSpecies)
+    @FieldResolver(() => [PokemonSpecies])
     async pokemonSpecies(@Root() evolutionTrigger: EvolutionTrigger) {
         const pss = evolutionTrigger.pokemonSpecies.map(async (ps) => {
             return await this.pokeAPI.get(ps.url) as PokemonSpecies;

@@ -94,19 +94,23 @@ Be nice and friendly to your fellow PokéAPI developers.
 
 - [x] Nature
 
-- [ ] PokeathlonStat
+- [x] PalParkArea
 
-- [ ] Pokedex
+- [x] PokeathlonStat
+
+- [x] Pokedex
 
 - [x] Pokemon
 
-- [ ] PokemonColor
+- [x] PokemonColor
 
-- [ ] PokemonForm
+- [x] PokemonHabitat
 
-- [ ] PokemonShape
+- [x] PokemonForm
 
-- [ ] PokemonSpecies
+- [x] PokemonShape
+
+- [x] PokemonSpecies
 
 - [x] Region
 
