@@ -12,7 +12,7 @@
   "dependencies": {
     "@types/async-lock": "^1.1.1",
     "@types/node-fetch": "^2.3.3",
-    "apollo-server-express": "^2.4.8",
+    "apollo-server-express": "^2.14.2",
     "async-lock": "^1.2.0",
     "camelcase-keys": "^5.2.0",
     "express": "^4.16.4",
